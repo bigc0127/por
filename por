@@ -119,12 +119,12 @@ elsif cmd == "-h" || cmd == "--help" || cmd == "-H" || cmd == "--Help"
     puts"list all versions of a pkg"
     puts"\n"
     puts"por -i [pkg]"
-    	puts"or"
-    	puts"por -I [pkg]"
-	puts"por --info [pkg]"
-	puts"or"
-	puts"por --Info [pkg]"
-    	puts"shows info about the pkg"
+    puts"or"
+    puts"por -I [pkg]"
+    puts"por --info [pkg]"
+    puts"or"
+    puts"por --Info [pkg]"
+    puts"shows info about the pkg"
 
 
 
