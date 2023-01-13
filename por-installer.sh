@@ -1,5 +1,5 @@
 #!/bin/bash
-if  ! -e por
+if  ! test -e por
   then
      echo "installing local copy of por"
   else
