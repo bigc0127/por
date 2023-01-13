@@ -49,7 +49,7 @@ elsif cmd == "-I" || cmd =="-i" || cmd =="-Info" || cmd == "--info"
     system "apt show #{pkgs} #{args} #{args2} #{args3} #{args4} #{args5}"
 
 elsif cmd == "-h" || cmd == "--help" || cmd == "-H" || cmd == "--Help"
-    puts"============= Pacman Operational Rosetta v1 ============="
+    puts"============ Pacman Operational Rosetta v1.1 ============"
     puts"This utility was made to help pacman users migrate to apt"
     puts"========================================================="
     puts"\n"
