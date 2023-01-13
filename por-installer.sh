@@ -1,4 +1,11 @@
 #!/bin/bash
+if  ! -e por
+  then
+     echo "installing local copy of por"
+  else
+     curl -o por https://raw.github.com/bigc0127/por/tree/master/por
+fi
+
 if ! command -v por &> /dev/null
   then
     mkdir ~/.utils
