@@ -7,22 +7,25 @@ if test -e "$FILE"; then
 fi
 
 if test -e ~/.utils; then
+    rm -v ~/.utils/por
     mv -v ./por ~/.utils
+    chmod 755 ~/.utils/por
   else
    mkdir ~/.utils
-   chmod +x ./por
    mv -v ./por ~/.utils
+   chmod 755 ~/.utils/por
    echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.bashrc
-fi
 
-if test -e /usr/bin/fish; then
-    echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.config/fish/config.fish
- else
-   echo "fish not installed not adding to fish.conf"
-fi
+   if test -e /usr/bin/fish; then
+     echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.config/fish/config.fish
+   else
+     echo "fish not installed not adding to fish.conf"
+   fi
 
-if test -e /usr/bin/zsh; then
-  echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.zshrc
- else
-  echo "zsh not installed, not adding to .zshrc"
+   if test -e /usr/bin/zsh; then
+    echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.zshrc
+   else
+    echo "zsh not installed, not adding to .zshrc"
+   fi
+
 fi
