@@ -1,31 +1,31 @@
 #!/bin/bash
-if  ! test -e ./por
-  then
+FILE=./por
+if test -e "$FILE"; then
      echo "installing local copy of por"
   else
      curl -o por https://raw.githubusercontent.com/bigc0127/por/main/por
 fi
 
-if ! command -v por &> /dev/null
-  then
-    mkdir ~/.utils
-    chmod +x ./por
+if test -e ~/.utils; then
+    rm -v ~/.utils/por
     mv -v ./por ~/.utils
-    echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.bashrc
+    chmod 755 ~/.utils/por
   else
-    mv -v ./por ~/.utils
-fi
+   mkdir ~/.utils
+   mv -v ./por ~/.utils
+   chmod 755 ~/.utils/por
+   echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.bashrc
 
-if ! command -v fish &> /dev/null
- then
-    echo "fish not installed not adding to fish.conf"
- else
-    echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.config/fish/config.fish
-fi
+   if test -e /usr/bin/fish; then
+     echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.config/fish/config.fish
+   else
+     echo "fish not installed not adding to fish.conf"
+   fi
 
-if ! command -v zsh &> /dev/null
- then
-  echo "zsh not installed, not adding to .zshrc"
- else
-  echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.zshrc
+   if test -e /usr/bin/zsh; then
+    echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.zshrc
+   else
+    echo "zsh not installed, not adding to .zshrc"
+   fi
+
 fi
