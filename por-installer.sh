@@ -3,7 +3,7 @@ if  ! -e por
   then
      echo "installing local copy of por"
   else
-     curl -o por https://raw.github.com/bigc0127/por/tree/master/por
+     curl -o por https://raw.githubusercontent.com/bigc0127/por/main/por
 fi
 
 if ! command -v por &> /dev/null
