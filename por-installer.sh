@@ -1,6 +1,10 @@
 #!/bin/bash
-mkdir ~/.utils
-chmod +x ./por
-mv -v ./por ~/.utils
-export PATH="$HOME/.utils:$PATH"
-echo "you can now use por"
+if ! command -v por &> /dev/null
+  then
+    mkdir ~/.utils
+    chmod +x ./por
+    mv -v ./por ~/.utils
+  else
+    mv -v ./por ~/.utils
+  exit
+fi
