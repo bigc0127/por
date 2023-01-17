@@ -7,6 +7,7 @@ args2 = ARGV[3]
 args3 = ARGV[4]
 args4 = ARGV[5]
 args5 = ARGV[6]
+$version = 1.2
 if cmd == "-S"
     system "doas apt install #{pkgs} #{args} #{args2} #{args3} #{args4} #{args5}"
 elsif cmd == "-Ss" || cmd == "-s"
@@ -48,8 +49,11 @@ elsif cmd == "-Qdtq" && pkgs == "n/a"
 elsif cmd == "-I" || cmd =="-i" || cmd =="-Info" || cmd == "--info"
     system "apt show #{pkgs} #{args} #{args2} #{args3} #{args4} #{args5}"
 
+elsif cmd =="-v"
+    puts"POR Version #{$version.to_s}"
+
 elsif cmd == "-h" || cmd == "--help" || cmd == "-H" || cmd == "--Help"
-    puts"============ Pacman Operational Rosetta v1.1 ============"
+    puts"============ Pacman Operational Rosetta v#{$version.to_s} ============"
     puts"This utility was made to help pacman users migrate to apt"
     puts"========================================================="
     puts"\n"
@@ -125,6 +129,10 @@ elsif cmd == "-h" || cmd == "--help" || cmd == "-H" || cmd == "--Help"
     puts"or"
     puts"por --Info [pkg]"
     puts"shows info about the pkg"
+    puts"\n"
+    puts"por -v"
+    puts"shows version of installed por"
+
 
 
 
