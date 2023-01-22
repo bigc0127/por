@@ -1,4 +1,9 @@
 #!/bin/bash
+if[which ruby &> /dev/null]
+     sudo apt install ruby -y
+else 
+fi
+
 FILE=./por
 if test -e "$FILE"; then
      echo "installing local copy of por"
