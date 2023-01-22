@@ -1,7 +1,8 @@
 #!/bin/bash
-if[which ruby &> /dev/null]
+if which ruby > /dev/null; then 
      sudo apt install ruby -y
 else 
+     echo "ruby is installed no need to reinstall it"
 fi
 
 FILE=./por
