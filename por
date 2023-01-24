@@ -54,6 +54,8 @@ elsif cmd =="-v"
 
 elsif cmd == "-h" || cmd == "--help" || cmd == "-H" || cmd == "--Help"
     system "less ~/.utils/help.txt"
+elsif cmd.nil?
+    system "sudo apt update && sudo apt upgrade"
 else
-	system 'echo "command not understood"'
+    system 'echo "command not understood"'
 end
