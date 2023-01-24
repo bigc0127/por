@@ -4,6 +4,8 @@ This utility was made to help pacman users migrate to apt
 
 usage: por [cmd] [pkgs] [arg] [arg2] [arg3] [arg4] [arg5]
 
+if no cmd flags are used por assumes -Syu
+
 por -S [pkg]
 installs the [pkg].
 for multiple packages use 'pkg1 pkg2'
