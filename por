@@ -9,8 +9,8 @@ args4 = ARGV[5]
 args5 = ARGV[6]
 $version = 2.1
 
-$config_file = ("config.txt")
-config = File.open("#{$config_file}")
+$config_file = '~/.utils/config.txt'
+config = File.open(File.expand_path($config_file), 'r')
 conf_data = config.readlines.map(&:chomp)
 flatpakSupportEnabled = conf_data[1].to_s
 
