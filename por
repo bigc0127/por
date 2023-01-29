@@ -7,7 +7,7 @@ args2 = ARGV[3]
 args3 = ARGV[4]
 args4 = ARGV[5]
 args5 = ARGV[6]
-$version = 2.1
+$version = 2.5
 
 $config_file = '~/.utils/config.txt'
 config = File.open(File.expand_path($config_file), 'r')
