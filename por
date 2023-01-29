@@ -66,9 +66,12 @@ elsif cmd =="-v"
 
 elsif cmd == "-h" || cmd == "--help" || cmd == "-H" || cmd == "--Help"
     system "less ~/.utils/help.txt"
-
-elsif cmd.nil?
+    
+elsif cmd.nil? && flatpakSupportEnabled == "False"
     system "sudo apt update && sudo apt upgrade"
+
+elsif cmd.nil? && flatpakSupportEnabled == "True"
+    system "sudo apt update && sudo apt upgrade && flatpak update"
 
 elsif cmd == "test" && pkgs == "test"
   puts "test sucess"
