@@ -6,76 +6,143 @@ usage: por [cmd] [pkgs] [arg] [arg2] [arg3] [arg4] [arg5]
 
 if no cmd flags are used por assumes -Syu
 
+=============
 por -S [pkg]
-installs the [pkg].
+
+Installs the [pkg].
 for multiple packages use 'pkg1 pkg2'
 
+=============
 por -Ss [pkg]
-searches for [pkg]
 
+Searches for [pkg]
+
+=============
 por -p [pkg]
 or
 por -S [pkg] --print
-simulates the action.
+
+Simulates the action.
 when using the argument form it must be the 1st argument
 
+=============
 por -Rs [pkg]
-removes the [pkg].
+
+Removes the [pkg].
 does not remove user config files.
 for multiple pkgs use 'pkg1 pkg2'
 
+=============
 por -Rn [pkg]
-removes the [pkg].
+
+Removes the [pkg].
 does remove user config files.
 for multiple pkgs use 'pkg1 pkg2'
 
+=============
 por -Syu
-updates all pkgs installed on system
 
+Updates all pkgs installed on system
+
+=============
 por -Syyu
+
 Upgrades the system to next release if possible
 only recommended if on Debian or Ubuntu
 
-por -Sy
-updates local repo cache
+=============
+por -FA --enable
 
+Enables flatpak support
+
+=============
+por -FA --disable
+
+Disabled flatpak support
+
+=============
+
+por -FS
+
+Flatpak install
+
+=============
+por -FR
+
+Flatpak remove
+
+=============
+por -FL
+
+Flatpak list
+
+=============
+por -FU
+
+Flatpak update
+
+=============
+por -Sy
+
+Updates local repo cache
+
+=============
 por -D [pkg] --asexplicit
-mark pkg as user installed
+
+Mark pkg as user installed
 for multiple pkgs use'pkg1 pkg2'
 
+=============
 por -S [pkg] --asdeps
-mark pkg as dependancys
+
+Mark pkg as dependancys
 for multiple pkgs use 'pkg1 pkg2'
 
+=============
 por -Sc
 or
 por -Scc
-cleans un-needed pkgs from system
+
+Cleans un-needed pkgs from system
 does not remove user config files
 
+=============
 por -Rcns [pkg]
-cleans un-needed pkgs from system
+
+Cleans un-needed pkgs from system
 does remove user config files
 
+=============
 por -Qdtq
-list pkgs
 
+List pkgs
+
+=============
 por -Qdtq n/a --installed
-list installed pkgs
 
+List installed pkgs
+
+=============
 por -Qdtq n/a --upgradeable
-list upgradable pkgs
 
+List upgradable pkgs
+
+=============
 por -Qdtq n/a --all-versions
-list all versions of a pkg
 
+List all versions of a pkg
+
+=============
 por -i [pkg]
 or
 por -I [pkg]
 por --info [pkg]
 or
 por --Info [pkg]
-shows info about the pkg
 
+Shows info about the pkg
+
+=============
 por -v
-shows version of installed por
+
+Shows version of installed por
