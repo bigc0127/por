@@ -17,14 +17,18 @@ if test -e ~/.utils; then
     rm -v ~/.utils/por
     mv -v ./por ~/.utils
     mv -v ./help.txt ~/.utils
+    mv -v ./config.txt ~/.utils
     chmod 755 ~/.utils/por
     chmod 755 ~/.utils/help.txt
+    chmod 755 ~/.utils/config.txt
   else
    mkdir ~/.utils
    mv -v ./por ~/.utils
    mv -v ./help.txt ~/.utils
+   mv -v ./config.txt ~/.utils
    chmod 755 ~/.utils/por
    chmod 755 ~/.utils/help.txt
+   chmod 755 ~/.utils/config.txt
    echo 'export PATH="$HOME/.utils:$PATH"' >> ~/.bashrc
 
    if test -e /usr/bin/fish; then
